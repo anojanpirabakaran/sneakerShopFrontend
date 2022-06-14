@@ -14,7 +14,11 @@
     "@types/react-dom": "^18.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+<<<<<<< HEAD
     "react-query": "^3.39.1",
+=======
+    "react-router-dom": "^6.3.0",
+>>>>>>> 3761a6a42870cc5a8acb2f99b571d152b1e22b62
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.4.2",
