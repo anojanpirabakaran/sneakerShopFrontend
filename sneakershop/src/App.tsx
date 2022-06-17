@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ItemCard from './molecules/ItemCard/ItemCard';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> piraaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </p>
+        <ItemCard/>
         <a
           className="App-link"
           href="https://reactjs.org"
