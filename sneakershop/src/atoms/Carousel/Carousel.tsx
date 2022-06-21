@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Homepage() {
+const MuiCarousel = () => {
   return (
     <Carousel>
       <Carousel.Item interval={3000}>
@@ -38,3 +38,5 @@ export default function Homepage() {
     </Carousel>
   );
 }
+
+export default MuiCarousel;
