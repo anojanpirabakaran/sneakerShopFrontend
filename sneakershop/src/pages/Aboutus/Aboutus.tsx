@@ -4,7 +4,7 @@ import "./Aboutus.css";
 
 const Aboutus = () => {
   return (
-    <>
+    <Box>
       <h1 className="about-title">About Us</h1>
       <br /> <br />
       <div className="container">
@@ -170,7 +170,7 @@ const Aboutus = () => {
           </ul>
         </div>
       </div>
-    </>
+    </Box>
   );
 };
 
