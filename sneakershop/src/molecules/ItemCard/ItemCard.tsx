@@ -1,10 +1,12 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
 
+import "./ItemCard.css"
+
 
 export default function ItemCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 280, minWidth: 280 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -14,17 +16,16 @@ export default function ItemCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            name
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            price
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
+        <Button size="small" color="primary" variant='outlined' className="cardButton">
+          View options
         </Button>
       </CardActions>
     </Card>
