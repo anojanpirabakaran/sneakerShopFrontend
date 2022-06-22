@@ -83,7 +83,7 @@ const Aboutus = () => {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="https://image.flaticon.com/icons/png/512/1/1213.png"
+                  src="https://thumbs.dreamstime.com/b/data-privacy-icon-secure-file-creative-element-design-stock-market-icons-collection-pixel-perfect-commercial-print-media-171611342.jpg"
                   alt="..."
                 />
               </div>
