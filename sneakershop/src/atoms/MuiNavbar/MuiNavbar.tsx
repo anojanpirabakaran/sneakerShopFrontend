@@ -13,8 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
+import { Link } from "react-router-dom";
 
-const pages = ["Home", "Shop", "About us"];
+const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const MuiNavbar = () => {
@@ -49,7 +50,7 @@ const MuiNavbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/Home"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -104,7 +105,7 @@ const MuiNavbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="/Home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -121,6 +122,7 @@ const MuiNavbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
+                href={"/" + page}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
@@ -129,7 +131,6 @@ const MuiNavbar = () => {
               </Button>
             ))}
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

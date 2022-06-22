@@ -5,7 +5,7 @@ import "./Aboutus.css";
 const Aboutus = () => {
   return (
     <>
-      <h1 className="about-title">About</h1>
+      <h1 className="about-title">About Us</h1>
       <br /> <br />
       <div className="container">
         <div className="container">
