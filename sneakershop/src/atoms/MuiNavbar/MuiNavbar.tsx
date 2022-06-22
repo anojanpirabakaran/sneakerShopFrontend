@@ -13,7 +13,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
-import { Link } from "react-router-dom";
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -50,7 +49,7 @@ const MuiNavbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/Home"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -105,7 +104,7 @@ const MuiNavbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/Home"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

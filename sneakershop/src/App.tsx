@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage/Homepage";
 import MuiNavbar from "./atoms/MuiNavbar/MuiNavbar";
 import Aboutus from "./pages/Aboutus/Aboutus";
 import { Box } from "@mui/material";
+import Shop from "./pages/Shop/Shop";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <MuiNavbar />
       <BrowserRouter>
         <Routes>
-          <Route path="/Home" element={<Homepage />} />
-          <Route path="/About-us" element={<Aboutus />}></Route>
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/about-us" element={<Aboutus />}/>
+          <Route path="/shop" element={<Shop />}/>
         </Routes>
       </BrowserRouter>
     </Box>
