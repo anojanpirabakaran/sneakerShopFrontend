@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "Shop", "About us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const MuiNavbar = () => {
@@ -104,7 +104,7 @@ const MuiNavbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
