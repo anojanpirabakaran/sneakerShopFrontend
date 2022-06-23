@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
+import logo from "../../images/Logo.png"
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -45,6 +46,7 @@ const MuiNavbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img src={logo} alt="" />
           <Typography
             variant="h6"
             noWrap
