@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
-import logo from "../../images/Logo.png"
+import logo from "../../images/Logo.png";
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -122,7 +122,7 @@ const MuiNavbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                href={"/" + page}
+                href={("/" + page).toLowerCase()}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
