@@ -45,8 +45,7 @@ const MuiNavbar = () => {
     <AppBar position="static" className="muiNavbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <img src={logo} alt="" />
+          <img src={logo} alt="Logo" className="logo" />
           <Typography
             variant="h6"
             noWrap
@@ -62,7 +61,7 @@ const MuiNavbar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            House of Kickz
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
