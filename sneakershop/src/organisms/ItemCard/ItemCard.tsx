@@ -2,6 +2,7 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import React from 'react'
 
 import "./ItemCard.css"
+import dummyimg from "../../images/Jordan1.png"
 
 
 export default function ItemCard() {
@@ -11,14 +12,14 @@ export default function ItemCard() {
         <CardMedia
           component="img"
           height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={dummyimg}
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" className='cardText'>
             name
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" className='cardText'>
             price
           </Typography>
         </CardContent>

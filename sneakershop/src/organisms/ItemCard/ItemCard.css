@@ -1,4 +1,10 @@
 .cardButton{
     margin-left: auto !important;
     margin-right: auto !important;
+    border-color: black !important;
+    color: black !important;
+}
+
+.cardText{
+    text-align: center !important
 }
