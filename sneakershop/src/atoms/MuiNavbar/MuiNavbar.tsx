@@ -146,9 +146,6 @@ const MuiNavbar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page === "Home" ? <HomeIcon className="icons" /> : ""}
-                {page === "Shop" ? <ShoppingCartIcon className="icons" /> : ""}
-                {page === "About-us" ? <ContactsIcon className="icons" /> : ""}
                 {page}
               </Button>
             ))}
