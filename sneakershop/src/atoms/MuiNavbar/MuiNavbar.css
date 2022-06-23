@@ -12,7 +12,6 @@
   margin-bottom: 2%;
 }
 
-
 @media (min-width: 0px) {
   .logoScreen {
     display: none;
@@ -24,7 +23,6 @@
     display: flex;
   }
 }
-
 
 @media (min-width: 900px) {
   .logoMobile {

@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
 import logo from "../../images/Logo.png";
 import HomeIcon from "@mui/icons-material/Home";
