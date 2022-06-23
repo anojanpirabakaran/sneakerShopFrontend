@@ -2,6 +2,7 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Badge } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -152,7 +153,10 @@ const MuiNavbar = () => {
           </Box>
 
           <Box className="shoppingCart">
-            <ShoppingCartDrawer />
+            {/* Amount of Items which are in the shopping cart */}
+            <Badge badgeContent={1} color="error">
+              <ShoppingCartDrawer />
+            </Badge>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
