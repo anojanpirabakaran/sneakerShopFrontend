@@ -7,3 +7,25 @@
   height: 6%;
   margin: 0.6%;
 }
+
+.icons {
+  margin-bottom: 2%;
+}
+
+@media (min-width: 0px) {
+  .logoScreen {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .logoScreen {
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .logoMobile {
+    display: none;
+  }
+}

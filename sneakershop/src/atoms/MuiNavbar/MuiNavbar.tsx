@@ -11,9 +11,11 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import "./MuiNavbar.css";
 import logo from "../../images/Logo.png";
+import HomeIcon from "@mui/icons-material/Home";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -45,7 +47,7 @@ const MuiNavbar = () => {
     <AppBar position="static" className="muiNavbar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo logoScreen" />
           <Typography
             variant="h6"
             noWrap
@@ -94,13 +96,29 @@ const MuiNavbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Button
+                  href={("/" + page).toLowerCase()}
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ display: "block" }}
+                >
+                  {page === "Home" ? <HomeIcon className="icons" /> : ""}
+                  {page === "Shop" ? (
+                    <ShoppingCartIcon className="icons" />
+                  ) : (
+                    ""
+                  )}
+                  {page === "About-us" ? (
+                    <ContactsIcon className="icons" />
+                  ) : (
+                    ""
+                  )}
+                  {page}
+                </Button>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <img src={logo} alt="Logo" className="logo logoMobile" />
           <Typography
             variant="h5"
             noWrap
@@ -117,7 +135,7 @@ const MuiNavbar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            House of Kickz
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -127,6 +145,9 @@ const MuiNavbar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
+                {page === "Home" ? <HomeIcon className="icons" /> : ""}
+                {page === "Shop" ? <ShoppingCartIcon className="icons" /> : ""}
+                {page === "About-us" ? <ContactsIcon className="icons" /> : ""}
                 {page}
               </Button>
             ))}
