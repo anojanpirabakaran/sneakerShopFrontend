@@ -37,7 +37,7 @@ const Aboutus = () => {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="https://www.vhv.rs/dpng/d/71-713026_circle-shopping-cart-logo-hd-png-download.png"
+                  src="https://cdn-icons-png.flaticon.com/512/641/641813.png"
                   alt="..."
                 />
               </div>
@@ -61,7 +61,7 @@ const Aboutus = () => {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dollar_sign_in_circle.svg/1024px-Dollar_sign_in_circle.svg.png"
+                  src="https://previews.123rf.com/images/imagevectors/imagevectors1601/imagevectors160100403/50599584-flat-green-credit-card-payment-icon-and-green-circle.jpg"
                   alt="..."
                 />
               </div>
@@ -127,7 +127,7 @@ const Aboutus = () => {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="https://e7.pngegg.com/pngimages/577/307/png-clipart-human-with-circle-logo-national-cyber-security-alliance-organization-drupal-association-information-internet-icon-s-customers-free-miscellaneous-company.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Circle-icons-contacts.svg/2048px-Circle-icons-contacts.svg.png"
                   alt="..."
                 />
               </div>
@@ -149,7 +149,7 @@ const Aboutus = () => {
               <div className="timeline-image">
                 <img
                   className="rounded-circle img-fluid"
-                  src="https://e7.pngegg.com/pngimages/312/807/png-clipart-computer-icons-check-mark-success-icon-cdr-angle.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP18hRO8y5t_f0lcwYjg2OVFlclaBoW-pKpK4zHoUIOVgTbYn-0udAoZVZCWRf-Cuvw4s&usqp=CAU"
                   alt="..."
                 />
               </div>
