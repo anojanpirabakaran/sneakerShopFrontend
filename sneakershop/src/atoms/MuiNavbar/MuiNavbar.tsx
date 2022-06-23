@@ -122,8 +122,7 @@ const MuiNavbar = () => {
           </Box>
           <img src={logo} alt="Logo" className="logo logoMobile" />
           <Typography
-          className="textMobile"
-           
+            className="textMobile"
             noWrap
             component="a"
             href="/home"
