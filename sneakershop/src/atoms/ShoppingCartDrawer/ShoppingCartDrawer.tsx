@@ -1,14 +1,8 @@
-import MailIcon from "@mui/icons-material/Mail";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import * as React from "react";
+import { useState } from "react";
 import MuiButton from "../MuiButton/MuiButton";
 
 type Anchor = "right";
@@ -17,6 +11,8 @@ export default function ShoppingCartDrawer() {
   const [state, setState] = React.useState({
     right: false,
   });
+
+  const [cartItems, setCartItems] = useState<string>("");
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -34,22 +30,14 @@ export default function ShoppingCartDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
+      sx={{ width: 400 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <h2>Your Cart</h2>
+      {cartItems.length === 0 ? <p>No items in cart.</p> : ""}
+      {cartItems.length !== 0 ? <h2>Total: $</h2> : ""}
     </Box>
   );
 
