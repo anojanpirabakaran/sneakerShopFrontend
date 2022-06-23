@@ -96,9 +96,25 @@ const MuiNavbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Button
+                  href={("/" + page).toLowerCase()}
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ display: "block" }}
+                >
+                  {page === "Home" ? <HomeIcon className="icons" /> : ""}
+                  {page === "Shop" ? (
+                    <ShoppingCartIcon className="icons" />
+                  ) : (
+                    ""
+                  )}
+                  {page === "About-us" ? (
+                    <ContactsIcon className="icons" />
+                  ) : (
+                    ""
+                  )}
+                  {page}
+                </Button>
               ))}
             </Menu>
           </Box>
