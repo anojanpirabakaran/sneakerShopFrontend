@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import ProductService from '../../services/ProductService'
 
 import "./ItemCard.css"
-import dummyimg from "../../images/Jordan1.png"
 
 interface Sneaker {
   id: string,
