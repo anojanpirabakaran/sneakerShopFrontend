@@ -7,6 +7,7 @@ import Aboutus from "./pages/Aboutus/Aboutus";
 import { Box } from "@mui/material";
 import Shop from "./pages/Shop/Shop";
 import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about-us" element={<Aboutus />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>
     </Box>
