@@ -1,3 +1,16 @@
 .paper_background{
     min-height: 500px;
 }
+
+.shopImg{
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+ 
+}
