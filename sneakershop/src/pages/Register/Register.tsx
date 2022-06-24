@@ -29,7 +29,8 @@ const schema = yup.object().shape({
   password: yup.string().required().min(8).max(120),
   passwordConfirmation: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match"),
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required(),
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -87,6 +88,7 @@ function Register() {
           helperText={errors.firstName?.message}
           error={!!errors.firstName?.message}
           fullWidth
+          required
         />
         <TextField
           {...register("lastName")}
@@ -96,6 +98,7 @@ function Register() {
           helperText={errors.lastName?.message}
           error={!!errors.lastName?.message}
           fullWidth
+          required
         />
 
         <TextField
@@ -107,6 +110,7 @@ function Register() {
           error={!!errors.password?.message}
           type={showPassword ? "text" : "password"}
           fullWidth
+          required
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -131,6 +135,7 @@ function Register() {
           error={!!errors.passwordConfirmation?.message}
           type={showPassword ? "text" : "password"}
           fullWidth
+          required
         />
         <Button
           type="submit"
