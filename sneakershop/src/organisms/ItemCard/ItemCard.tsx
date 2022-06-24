@@ -21,11 +21,11 @@ export default function ItemCard() {
 
   const getSneakerData = () => {
     ProductService.getAll()
-    .then((res) => {
+    .then((res: { data: React.SetStateAction<Sneaker[]> }) => {
       console.log(res)
       setData(res.data)
     })
-    .catch((err) => {
+    .catch((err: any) => {
       console.log(err)
     })
   }
