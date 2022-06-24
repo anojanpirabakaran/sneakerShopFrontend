@@ -20,7 +20,7 @@ import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
 
 const pages = ["Home", "Shop", "About-us"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Register", "Login", "Logout"];
 
 const MuiNavbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -122,8 +122,7 @@ const MuiNavbar = () => {
           </Box>
           <img src={logo} alt="Logo" className="logo logoMobile" />
           <Typography
-          className="textMobile"
-           
+            className="textMobile"
             noWrap
             component="a"
             href="/home"
@@ -183,7 +182,9 @@ const MuiNavbar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Button href={("/" + setting).toLowerCase()} key={setting}>
+                    {setting}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
