@@ -1,14 +1,14 @@
-import * as React from "react";
+import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 
 type textfield = {
   placeholder: string;
   label: string;
   type: string;
+  onChange?: (e: any) => void;
 };
 
-const MuiTextField = ({ placeholder, label , type}: textfield) => {
+const MuiTextField = ({ placeholder, label, type, onChange }: textfield) => {
   return (
     <Box
       component="form"
@@ -24,6 +24,8 @@ const MuiTextField = ({ placeholder, label , type}: textfield) => {
         placeholder={placeholder}
         label={label}
         type={type}
+        onChange={() => {}}
+        
       />
     </Box>
   );
