@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import ProductService from '../../services/ProductService'
 
@@ -36,7 +36,9 @@ export default function ItemCard() {
 
   return (
     <>
+    <Grid container item xs={12}>
     {data && data.map((sneaker) => (
+      <Grid container item md={6} sm={12}>
       <Card sx={{ maxWidth: 280, minWidth: 280 }}>
       <CardActionArea>
         <CardMedia
@@ -60,7 +62,9 @@ export default function ItemCard() {
         </Button>
       </CardActions>
     </Card>
+    </Grid>
     ))}
+    </Grid>
    </>
   )
 }
