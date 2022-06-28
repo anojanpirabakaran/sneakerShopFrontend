@@ -1,18 +1,20 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import {
-  makeStyles,
-  Container,
-  Typography,
-  TextField,
   Button,
+  Container,
   IconButton,
   InputAdornment,
+  makeStyles,
+  TextField,
+  Typography,
 } from "@material-ui/core";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import axios from "axios";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import * as yup from "yup";
 
 interface IFormInput {
   email: string;
@@ -44,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Register() {
+  const navigation = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
@@ -62,6 +65,14 @@ function Register() {
 
   const onSubmit = (data: IFormInput) => {
     setJson(JSON.stringify(data));
+    axios
+      .post("http://localhost:8080/clients/", data)
+      .then(() => {
+        navigation("/login");
+      })
+      .catch(() => {
+        navigation("/register");
+      });
   };
 
   return (
@@ -146,15 +157,6 @@ function Register() {
         >
           Sign Up
         </Button>
-        {json && (
-          <>
-            <Typography variant="body1">
-              Below is the JSON that would normally get passed to the server
-              when a form gets submitted
-            </Typography>
-            <Typography variant="body2">{json}</Typography>
-          </>
-        )}
       </form>
     </Container>
   );
