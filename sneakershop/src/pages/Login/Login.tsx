@@ -13,6 +13,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 interface IFormInput {
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Login() {
+  const navigation = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
@@ -54,7 +56,10 @@ function Login() {
 
   const onSubmit = (data: IFormInput) => {
     setJson(JSON.stringify(data));
-    axios.get(`http://localhost:8080/clients/${data.email}/${data.password}`);
+    axios
+      .get(`http://localhost:8080/clients/${data.email}/${data.password}`)
+      .then(navigation("/shop"))
+      .catch(() => navigation("/login"));
   };
 
   return (
