@@ -1,5 +1,6 @@
 .muiNavbar {
   z-index: 10;
+  background-color: rgb(111, 125, 187) !important;
 }
 
 .logo {
