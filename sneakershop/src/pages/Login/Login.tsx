@@ -58,7 +58,9 @@ function Login() {
     setJson(JSON.stringify(data));
     axios
       .get(`http://localhost:8080/clients/${data.email}/${data.password}`)
-      .then(navigation("/shop"))
+      .then(() => {
+        navigation("/shop");
+      })
       .catch(() => navigation("/login"));
   };
 
