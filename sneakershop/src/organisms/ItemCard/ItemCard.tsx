@@ -36,14 +36,15 @@ export default function ItemCard() {
     <>
     <Grid container item xs={12}>
     {data && data.map((sneaker) => (
-      <Grid container item md={6} sm={12}>
-      <Card sx={{ maxWidth: 280, minWidth: 280 }}>
+      <Grid container item md={3} sm={12} >
+      <Card sx={{ maxWidth: 280, minWidth: 280, margin: "auto", marginBottom: "5vh" }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
           image={sneaker.image}
           alt="green iguana"
+          sx={{height: "auto"}}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" className='cardText'>
