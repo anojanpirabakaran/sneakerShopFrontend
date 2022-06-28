@@ -1,19 +1,19 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import {
-  makeStyles,
-  Container,
-  Typography,
-  TextField,
   Button,
+  Container,
   IconButton,
   InputAdornment,
+  makeStyles,
+  TextField,
+  Typography,
 } from "@material-ui/core";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import userService from "../../services/UserService";
+import axios from "axios";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 interface IFormInput {
   email: string;
@@ -54,6 +54,7 @@ function Login() {
 
   const onSubmit = (data: IFormInput) => {
     setJson(JSON.stringify(data));
+    axios.get(`http://localhost:8080/clients/${data.email}/${data.password}`);
   };
 
   return (
