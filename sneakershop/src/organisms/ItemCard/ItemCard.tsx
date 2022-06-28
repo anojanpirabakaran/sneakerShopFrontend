@@ -2,37 +2,35 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid
 import React, { useEffect, useState } from 'react'
 import ProductService from '../../services/ProductService'
 
-import "./ItemCard.css"
-import dummyimg from "../../images/Jordan1.png"
+import "./ItemCard.css";
+//import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 
 interface Sneaker {
-  id: string,
-  name: string, 
-  description: string, 
-  image: string,
-  price: string,
-  brand: string
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  price: string;
+  brand: string;
 }
 
-
 export default function ItemCard() {
-
   const [data, setData] = useState<Sneaker[]>([]);
 
   const getSneakerData = () => {
     ProductService.getAll()
-    .then((res) => {
-      console.log(res)
-      setData(res.data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+      .then((res: { data: React.SetStateAction<Sneaker[]> }) => {
+        console.log(res);
+        setData(res.data);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
-    getSneakerData()
-  }, [])
+    getSneakerData();
+  }, []);
 
   return (
     <>
