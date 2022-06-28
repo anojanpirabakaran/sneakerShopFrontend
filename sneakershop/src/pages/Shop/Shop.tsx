@@ -8,7 +8,6 @@ import shopImg from "../../images/shop_img.jpg";
 export default function Shop() {
   return (
     <>
-      <div></div>
       <img className="shopImg" src={shopImg} alt="jordan 1" />
       <Paper elevation={0} className="paper_background">
         <ItemCard />
