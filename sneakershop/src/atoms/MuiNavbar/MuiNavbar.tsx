@@ -26,7 +26,7 @@ const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
 
 function getTotalItems(items: items.Sneaker[]) {
-  return items.map((item) => item.amount);
+  return items.length;
 }
 
 const MuiNavbar = () => {
@@ -51,7 +51,6 @@ const MuiNavbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
 
   return (
     <AppBar position="static" className="muiNavbar">
