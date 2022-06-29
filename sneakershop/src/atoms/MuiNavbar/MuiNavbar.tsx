@@ -18,6 +18,9 @@ import * as React from "react";
 import logo from "../../images/Logo.png";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
+import * as items from "../../organisms/ItemCard/ItemCard";
+
+const { addedCartItems } = items;
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
@@ -64,8 +67,8 @@ const MuiNavbar = () => {
               color: "inherit",
               textDecoration: "none",
               "&:hover": {
-                color: "white"
-              }
+                color: "white",
+              },
             }}
           >
             House of Kickz
@@ -105,9 +108,12 @@ const MuiNavbar = () => {
                   href={("/" + page).toLowerCase()}
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ display: "block",  "&:hover": {
-                    color: "red"
-                  } }}
+                  sx={{
+                    display: "block",
+                    "&:hover": {
+                      color: "red",
+                    },
+                  }}
                 >
                   {page === "Home" ? <HomeIcon className="icons" /> : ""}
                   {page === "Shop" ? (
@@ -140,22 +146,27 @@ const MuiNavbar = () => {
               letterSpacing: ".3rem",
               color: "white",
               textDecoration: "none",
-            "&:hover": {
-              color: "white"
-            }
+              "&:hover": {
+                color: "white",
+              },
             }}
           >
             House of Kickz
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex",  } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 href={("/" + page).toLowerCase()}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block",   "&:hover": {
-                  color: "white"
-                } }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
               >
                 {page}
               </Button>
@@ -164,7 +175,7 @@ const MuiNavbar = () => {
 
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={1} color="error">
+            <Badge badgeContent={addedCartItems.length} color="error">
               <ShoppingCartDrawer />
             </Badge>
           </Box>
