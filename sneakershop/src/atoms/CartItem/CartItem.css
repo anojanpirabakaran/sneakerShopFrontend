@@ -1,0 +1,27 @@
+.img {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 50%;
+}
+
+.information {
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  margin-top: 5%;
+}
+
+.itemTitle {
+  text-align: center;
+}

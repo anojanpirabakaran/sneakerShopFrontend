@@ -1,12 +1,14 @@
-.cardButton{
-    margin-left: auto !important;
-    margin-right: auto !important;
-    border-color: black !important;
-    color: black !important;
+.cardButton {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-color: black !important;
+  color: black !important;
 }
 
-.cardText{
-    text-align: center !important
+.cardText {
+  text-align: center !important;
 }
 
-
+.addCartButton {
+  color: #747cb8;
+}
