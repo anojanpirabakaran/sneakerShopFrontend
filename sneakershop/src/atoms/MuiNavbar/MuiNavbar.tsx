@@ -16,12 +16,18 @@ import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import logo from "../../images/Logo.png";
-import { addedCartItems } from "../../organisms/ItemCard/ItemCard";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
+import * as items from "../../organisms/ItemCard/ItemCard";
+
+const { addedCartItems } = items;
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
+
+function getTotalItems(items: items.Sneaker[]) {
+  return items.map((item) => item.amount);
+}
 
 const MuiNavbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -45,6 +51,7 @@ const MuiNavbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
 
   return (
     <AppBar position="static" className="muiNavbar">
@@ -154,7 +161,7 @@ const MuiNavbar = () => {
           </Box>
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={addedCartItems.length} color="error">
+            <Badge badgeContent={getTotalItems(addedCartItems)} color="error">
               <ShoppingCartDrawer />
             </Badge>
           </Box>

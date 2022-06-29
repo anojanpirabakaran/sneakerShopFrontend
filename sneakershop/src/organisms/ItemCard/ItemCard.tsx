@@ -24,13 +24,13 @@ export interface Sneaker {
   image: string;
   price: string;
   brand: string;
+  amount: number;
 }
 
 export const addedCartItems: Sneaker[] = [];
 
 const addItems = (sneaker: Sneaker) => {
   addedCartItems.push(sneaker);
-  console.log(sneaker.brand);
   return sneaker;
 };
 

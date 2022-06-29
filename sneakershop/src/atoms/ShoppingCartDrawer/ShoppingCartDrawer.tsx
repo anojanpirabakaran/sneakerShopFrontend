@@ -5,8 +5,8 @@ import * as React from "react";
 import { useState } from "react";
 import MuiButton from "../MuiButton/MuiButton";
 import * as items from "../../organisms/ItemCard/ItemCard";
-import { json } from "stream/consumers";
 import CartItem from "../CartItem/CartItem";
+import "./ShoppingCartDrawer.css";
 
 const { addedCartItems } = items;
 
@@ -19,11 +19,16 @@ export default function ShoppingCartDrawer() {
 
   const [cartItems, setCartItems] = useState<items.Sneaker[]>([]);
 
-  // const showItems = () => {
-  //   return cartItems.map(
-  //     (item) => (item.image, item.brand, item.name, item.price)
-  //   );
-  // };
+  const addToCart = (sneaker: items.Sneaker) => {
+    cartItems.push(sneaker);
+    return sneaker;
+  };
+
+  const removeFromCart = () => {
+    // cartItems.pop(sneaker.id);
+    // return sneaker;
+    return "";
+  };
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -46,17 +51,19 @@ export default function ShoppingCartDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <h2>Your Cart</h2>
-      {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+      <h2 className="title">Your Cart</h2>
+      {cartItems.length === 0 ? (
+        <p className="total">No items in cart.</p>
+      ) : null}
       {cartItems.map((item) => (
         <CartItem
           key={item.id}
           item={item}
-          // addToCart={addToCart}
-          // removeFromCart={removeFromCart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
         />
       ))}
-      {cartItems.length !== 0 ? <h2>Total: $</h2> : ""}
+      {cartItems.length !== 0 ? <h2 className="total">Total: $</h2> : ""}
     </Box>
   );
 
