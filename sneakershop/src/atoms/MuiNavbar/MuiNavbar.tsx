@@ -25,10 +25,6 @@ const { addedCartItems } = items;
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
 
-function getTotalItems(items: items.Sneaker[]) {
-  return items.length;
-}
-
 const MuiNavbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -176,9 +172,10 @@ const MuiNavbar = () => {
               </Button>
             ))}
           </Box>
+
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={getTotalItems(addedCartItems)} color="error">
+            <Badge badgeContent={addedCartItems.length} color="error">
               <ShoppingCartDrawer />
             </Badge>
           </Box>
