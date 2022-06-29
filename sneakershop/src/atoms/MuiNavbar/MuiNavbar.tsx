@@ -68,9 +68,12 @@ const MuiNavbar = () => {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
+              "&:hover": {
+                color: "white",
+              },
             }}
           >
             House of Kickz
@@ -110,7 +113,12 @@ const MuiNavbar = () => {
                   href={("/" + page).toLowerCase()}
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ display: "block" }}
+                  sx={{
+                    display: "block",
+                    "&:hover": {
+                      color: "red",
+                    },
+                  }}
                 >
                   {page === "Home" ? <HomeIcon className="icons" /> : ""}
                   {page === "Shop" ? (
@@ -141,8 +149,11 @@ const MuiNavbar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "white",
               textDecoration: "none",
+              "&:hover": {
+                color: "white",
+              },
             }}
           >
             House of Kickz
@@ -153,7 +164,14 @@ const MuiNavbar = () => {
                 href={("/" + page).toLowerCase()}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
               >
                 {page}
               </Button>
