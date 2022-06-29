@@ -6,15 +6,15 @@ const { addedCartItems } = items;
 
 type Props = {
   item: items.Sneaker;
-  //   addToCart: (clickedItem: items.Sneaker) => void;
-  //   removeFromCart: (id: number) => void;
+  addToCart: (clickedItem: items.Sneaker) => void;
+  removeFromCart: (id: number) => void;
 };
 
-const CartItem = ({ item }: Props) => {
+const CartItem = ({ item, addToCart, removeFromCart }: Props) => {
   return (
     <>
       <div>
-        <h3 className="itemTitle">{item.brand + " " + item.name}</h3>
+        <h4 className="itemTitle">{item.brand + " " + item.name}</h4>
         <div>
           <img className="img" src={item.image} alt={item.name} />
           <div className="buttons">
@@ -22,16 +22,16 @@ const CartItem = ({ item }: Props) => {
               size="small"
               disableElevation
               variant="contained"
-              // onClick={() => removeFromCart(item.id)}
+              onClick={() => removeFromCart(JSON.parse(item.id))}
             >
               -
             </Button>
-            {/* <p>{item.amount}</p> */}
+            <p>{item.amount}</p>
             <Button
               size="small"
               disableElevation
               variant="contained"
-              // onClick={() => addToCart(item)}
+              onClick={() => addToCart(item)}
             >
               +
             </Button>
