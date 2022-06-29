@@ -50,7 +50,7 @@ export default function ShoppingCartDrawer() {
             sx={{
               backgroundColor: "black",
               "&:hover": {
-                backgroundColor: "white",
+                backgroundColor: "inherit",
               },
             }}
           >
