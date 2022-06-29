@@ -45,9 +45,17 @@ export default function ShoppingCartDrawer() {
     <div>
       {(["right"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
-          <MuiButton onClick={toggleDrawer(anchor, true)}>
+          <MuiButton
+            onClick={toggleDrawer(anchor, true)}
+            sx={{
+              backgroundColor: "black",
+              "&:hover": {
+                backgroundColor: "white",
+              },
+            }}
+          >
             {" "}
-            {<ShoppingCartIcon />}
+            {<ShoppingCartIcon sx={{ color: "white" }} />}
           </MuiButton>
 
           <Drawer

@@ -8,7 +8,7 @@ import shopImg from "../../images/Jordan11.png";
 export default function Shop() {
   return (
     <>
-      <img className="shopImg" src={shopImg} alt="jordan 1" />
+      <img className="shopImg" src={shopImg} alt="jordan 11" />
       <Grid container item sm={12}>
       <Paper elevation={0} className="paper_background">
         <h1 className="shop_title">All Product</h1>

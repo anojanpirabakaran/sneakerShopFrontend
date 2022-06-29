@@ -140,3 +140,16 @@
 body {
   background-color: #ffffff;
 }
+
+.aboutImg{
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}

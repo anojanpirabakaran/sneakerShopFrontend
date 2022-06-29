@@ -1,10 +1,12 @@
 import { Box } from "@mui/material";
 import React from "react";
 import "./Aboutus.css";
+import aboutImg from "../../images/Jordan11.png";
 
 const Aboutus = () => {
   return (
-    <Box>
+    <>
+    <img className="aboutImg" src={aboutImg} alt="jordan 11" /><Box>
       <h1 className="about-title">About Us</h1>
       <br /> <br />
       <div className="container">
@@ -15,8 +17,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://icons-for-free.com/iconfiles/png/512/desktop+monitor+pc+screen+web+icon-1320168141814699293.png"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -38,8 +39,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://cdn-icons-png.flaticon.com/512/641/641813.png"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -62,8 +62,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://previews.123rf.com/images/imagevectors/imagevectors1601/imagevectors160100403/50599584-flat-green-credit-card-payment-icon-and-green-circle.jpg"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -84,8 +83,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://thumbs.dreamstime.com/b/data-privacy-icon-secure-file-creative-element-design-stock-market-icons-collection-pixel-perfect-commercial-print-media-171611342.jpg"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -105,8 +103,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://www.vhv.rs/dpng/d/467-4678891_flat-delivery-icon-png-clipart-png-download-delivery.png"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -128,8 +125,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Circle-icons-contacts.svg/2048px-Circle-icons-contacts.svg.png"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -150,8 +146,7 @@ const Aboutus = () => {
                 <img
                   className="rounded-circle img-fluid"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP18hRO8y5t_f0lcwYjg2OVFlclaBoW-pKpK4zHoUIOVgTbYn-0udAoZVZCWRf-Cuvw4s&usqp=CAU"
-                  alt="..."
-                />
+                  alt="..." />
               </div>
               <div className="timeline-panel">
                 <div className="timeline-heading">
@@ -171,6 +166,7 @@ const Aboutus = () => {
         </div>
       </div>
     </Box>
+    </>
   );
 };
 
