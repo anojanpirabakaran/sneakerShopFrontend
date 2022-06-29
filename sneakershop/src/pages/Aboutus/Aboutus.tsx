@@ -1,13 +1,12 @@
 import { Box } from "@mui/material";
 import React from "react";
 import "./Aboutus.css";
-import aboutImg from "../../images/Jordan11.png";
+import aboutImg from "../../images/unc.jpg";
 
 const Aboutus = () => {
   return (
     <>
     <img className="aboutImg" src={aboutImg} alt="jordan 11" /><Box>
-      <h1 className="about-title">About Us</h1>
       <br /> <br />
       <div className="container">
         <div className="container">
