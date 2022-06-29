@@ -1,8 +1,8 @@
 .cardButton {
   margin-left: auto !important;
-  margin-right: auto !important;
+  margin-right: 10% !important;
   border-color: black !important;
-  color: black !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .cardText {

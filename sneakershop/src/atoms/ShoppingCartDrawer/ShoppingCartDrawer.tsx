@@ -44,9 +44,9 @@ export default function ShoppingCartDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
-  const calculateTotal = (items: items.Sneaker[]) => {
-    return items.reduce((acc, item) => acc + item.amount, 0);
-  };
+  // const calculateTotal = (items: items.Sneaker[]) => {
+  //   items.reduce((acc, item) => acc + item.amount * item.price, 0);
+  // };
 
   const list = (anchor: Anchor) => (
     <Box
@@ -68,7 +68,8 @@ export default function ShoppingCartDrawer() {
         />
       ))}
       {cartItems.length !== 0 ? (
-        <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
+        // <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
+        <h2 className="total">Total: $</h2>
       ) : (
         ""
       )}
