@@ -4,6 +4,11 @@ import Drawer from "@mui/material/Drawer";
 import * as React from "react";
 import { useState } from "react";
 import MuiButton from "../MuiButton/MuiButton";
+import * as items from "../../organisms/ItemCard/ItemCard";
+import { json } from "stream/consumers";
+import CartItem from "../CartItem/CartItem";
+
+const { addedCartItems } = items;
 
 type Anchor = "right";
 
@@ -12,11 +17,18 @@ export default function ShoppingCartDrawer() {
     right: false,
   });
 
-  const [cartItems, setCartItems] = useState<string>("");
+  const [cartItems, setCartItems] = useState<items.Sneaker[]>([]);
+
+  // const showItems = () => {
+  //   return cartItems.map(
+  //     (item) => (item.image, item.brand, item.name, item.price)
+  //   );
+  // };
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
+      setCartItems(addedCartItems);
       if (
         event.type === "keydown" &&
         ((event as React.KeyboardEvent).key === "Tab" ||
@@ -24,7 +36,6 @@ export default function ShoppingCartDrawer() {
       ) {
         return;
       }
-
       setState({ ...state, [anchor]: open });
     };
 
@@ -36,7 +47,15 @@ export default function ShoppingCartDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <h2>Your Cart</h2>
-      {cartItems.length === 0 ? <p>No items in cart.</p> : ""}
+      {cartItems.length === 0 ? <p>No items in cart.</p> : null}
+      {cartItems.map((item) => (
+        <CartItem
+          key={item.id}
+          item={item}
+          // addToCart={addToCart}
+          // removeFromCart={removeFromCart}
+        />
+      ))}
       {cartItems.length !== 0 ? <h2>Total: $</h2> : ""}
     </Box>
   );

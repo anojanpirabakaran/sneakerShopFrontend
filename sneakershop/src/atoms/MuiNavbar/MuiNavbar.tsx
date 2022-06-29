@@ -16,6 +16,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import logo from "../../images/Logo.png";
+import { addedCartItems } from "../../organisms/ItemCard/ItemCard";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
 
@@ -169,10 +170,9 @@ const MuiNavbar = () => {
               </Button>
             ))}
           </Box>
-
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={1} color="error">
+            <Badge badgeContent={addedCartItems.length} color="error">
               <ShoppingCartDrawer />
             </Badge>
           </Box>
