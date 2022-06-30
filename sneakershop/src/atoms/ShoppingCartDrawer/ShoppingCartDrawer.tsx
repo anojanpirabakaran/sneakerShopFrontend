@@ -12,15 +12,14 @@ import ShoppingCartContext from "../Context/ShoppingCartContext";
 type Anchor = "right";
 
 export default function ShoppingCartDrawer() {
-  const { cartItems, addItem } = useContext(ShoppingCartContext);
+  const { cartItems } = useContext(ShoppingCartContext);
 
   const [state, setState] = React.useState({
     right: false,
   });
 
   const calculateTotal = (items: items.Sneaker[]) => {
-    console.log(items.map((item) => item.price));
-    return items.reduce((acc, item) => acc + item.amount * item.price, 0);
+    return items.reduce((acc, item) => acc + item.price, 0);
   };
 
   const toggleDrawer =

@@ -26,7 +26,7 @@ const CartItem = ({ item }: Props) => {
             >
               -
             </Button>
-            <p className="itemAmount">{JSON.stringify(item.amount)}</p>
+            {/* <p className="itemAmount">{item.amount}</p> */}
             <Button
               size="small"
               disableElevation

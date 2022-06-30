@@ -28,16 +28,10 @@ export const ShoppingCartContextProvider = ({
   const addItem = (sneaker: items.Sneaker) => {
     sneaker.amount += 1;
     setCartItems((oldCartItems) => [...oldCartItems, sneaker]);
-    console.log("Test");
   };
-
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
 
   const deleteItem = (sneaker: items.Sneaker) => {
     setCartItems(cartItems.filter((item) => item.id !== sneaker.id));
-    console.log(cartItems);
   };
 
   return (

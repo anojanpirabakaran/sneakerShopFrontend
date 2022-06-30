@@ -97,7 +97,6 @@ export default function ItemCard() {
                   <IconButton
                     onClick={() => {
                       addItem(sneaker);
-                      console.log(sneaker);
                     }}
                   >
                     <Tooltip title="Add to Cart">
