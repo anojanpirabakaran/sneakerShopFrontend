@@ -59,32 +59,38 @@ export default function ItemCard() {
                   marginBottom: "5vh",
                 }}
               >
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={sneaker.image}
-                    alt="green iguana"
-                    sx={{ height: "auto" }}
-                  />
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      className="cardText"
-                    >
-                      {sneaker.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="cardText"
-                    >
-                      {sneaker.price}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={sneaker.image}
+                  alt="green iguana"
+                  sx={{ height: "auto" }}
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    color="text.secondary"
+                    className="cardText"
+                  >
+                    {sneaker.brand}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    className="cardText"
+                  >
+                    {sneaker.name}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    className="cardText"
+                  >
+                    {sneaker.price}$
+                  </Typography>
+                </CardContent>
+
                 <CardActions>
                   <Button
                     size="small"

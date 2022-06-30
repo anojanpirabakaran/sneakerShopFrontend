@@ -13,10 +13,9 @@ export default function Shop() {
         <p className="first_title">"Buy your sneakers"</p>
         <p className="second_title">SHOP</p>
       </Grid>
-      <p className="second_title">ABOUT</p>
       <Grid container item sm={12}>
         <Paper elevation={0} className="paper_background">
-          <h1 className="shop_title">All Product</h1>
+          {/* <h1 className="shop_title">All Products</h1> */}
           <ItemCard />
         </Paper>
       </Grid>
