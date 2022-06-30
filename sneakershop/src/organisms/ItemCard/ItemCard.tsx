@@ -10,11 +10,12 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
 import AddIcon from "@mui/icons-material/Add";
 
 import "./ItemCard.css";
+import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
 //import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 
 export interface Sneaker {
@@ -22,19 +23,14 @@ export interface Sneaker {
   name: string;
   description: string;
   image: string;
-  price: string;
+  price: number;
   brand: string;
   amount: number;
 }
 
-export const addedCartItems: Sneaker[] = [];
-
-const addItems = (sneaker: Sneaker) => {
-  addedCartItems.push(sneaker);
-  return sneaker;
-};
-
 export default function ItemCard() {
+  const { addItem } = useContext(ShoppingCartContext);
+
   const [data, setData] = useState<Sneaker[]>([]);
 
   const getSneakerData = () => {
@@ -54,7 +50,7 @@ export default function ItemCard() {
       <Grid container item xs={12}>
         {data &&
           data.map((sneaker) => (
-            <Grid container item md={3} sm={12}>
+            <Grid container item md={3} sm={12} key={sneaker.id}>
               <Card
                 sx={{
                   maxWidth: 280,
@@ -98,7 +94,12 @@ export default function ItemCard() {
                   >
                     View options
                   </Button>
-                  <IconButton onClick={() => addItems(sneaker)}>
+                  <IconButton
+                    onClick={() => {
+                      addItem(sneaker);
+                      console.log(sneaker);
+                    }}
+                  >
                     <Tooltip title="Add to Cart">
                       <AddIcon className="addCartButton"></AddIcon>
                     </Tooltip>

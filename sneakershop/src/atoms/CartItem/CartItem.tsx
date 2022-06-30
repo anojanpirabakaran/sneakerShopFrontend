@@ -1,16 +1,16 @@
 import { Button } from "@material-ui/core";
+import { useContext } from "react";
 import * as items from "../../organisms/ItemCard/ItemCard";
+import ShoppingCartContext from "../Context/ShoppingCartContext";
 import "./CartItem.css";
-
-const { addedCartItems } = items;
 
 type Props = {
   item: items.Sneaker;
-  addToCart: (clickedItem: items.Sneaker) => void;
-  removeFromCart: (id: number) => void;
 };
 
-const CartItem = ({ item, addToCart, removeFromCart }: Props) => {
+const CartItem = ({ item }: Props) => {
+  const { addItem, deleteItem } = useContext(ShoppingCartContext);
+
   return (
     <>
       <div>
@@ -22,16 +22,16 @@ const CartItem = ({ item, addToCart, removeFromCart }: Props) => {
               size="small"
               disableElevation
               variant="contained"
-              onClick={() => removeFromCart(JSON.parse(item.id))}
+              onClick={() => deleteItem(item)}
             >
               -
             </Button>
-            <p>{item.amount}</p>
+            <p className="itemAmount">{JSON.stringify(item.amount)}</p>
             <Button
               size="small"
               disableElevation
               variant="contained"
-              onClick={() => addToCart(item)}
+              onClick={() => addItem(item)}
             >
               +
             </Button>

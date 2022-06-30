@@ -19,8 +19,8 @@ import logo from "../../images/Logo.png";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
 import * as items from "../../organisms/ItemCard/ItemCard";
-
-const { addedCartItems } = items;
+import { useEffect, useState } from "react";
+import ShoppingCartContext from "../Context/ShoppingCartContext";
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
@@ -47,6 +47,8 @@ const MuiNavbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const { cartItems } = React.useContext(ShoppingCartContext);
 
   return (
     <AppBar position="static" className="muiNavbar">
@@ -175,7 +177,7 @@ const MuiNavbar = () => {
 
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={addedCartItems.length} color="error">
+            <Badge badgeContent={cartItems.length} color="error">
               <ShoppingCartDrawer />
             </Badge>
           </Box>

@@ -2,38 +2,30 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import * as React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import MuiButton from "../MuiButton/MuiButton";
 import * as items from "../../organisms/ItemCard/ItemCard";
 import CartItem from "../CartItem/CartItem";
 import "./ShoppingCartDrawer.css";
-
-const { addedCartItems } = items;
+import ShoppingCartContext from "../Context/ShoppingCartContext";
 
 type Anchor = "right";
 
 export default function ShoppingCartDrawer() {
+  const { cartItems, addItem } = useContext(ShoppingCartContext);
+
   const [state, setState] = React.useState({
     right: false,
   });
 
-  const [cartItems, setCartItems] = useState<items.Sneaker[]>([]);
-
-  const addToCart = (sneaker: items.Sneaker) => {
-    cartItems.push(sneaker);
-    return sneaker;
-  };
-
-  const removeFromCart = () => {
-    // cartItems.pop(sneaker.id);
-    // return sneaker;
-    return "";
+  const calculateTotal = (items: items.Sneaker[]) => {
+    console.log(items.map((item) => item.price));
+    return items.reduce((acc, item) => acc + item.amount * item.price, 0);
   };
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      setCartItems(addedCartItems);
       if (
         event.type === "keydown" &&
         ((event as React.KeyboardEvent).key === "Tab" ||
@@ -43,10 +35,6 @@ export default function ShoppingCartDrawer() {
       }
       setState({ ...state, [anchor]: open });
     };
-
-  // const calculateTotal = (items: items.Sneaker[]) => {
-  //   items.reduce((acc, item) => acc + item.amount * item.price, 0);
-  // };
 
   const list = (anchor: Anchor) => (
     <Box
@@ -60,16 +48,10 @@ export default function ShoppingCartDrawer() {
         <p className="total">No items in cart.</p>
       ) : null}
       {cartItems.map((item) => (
-        <CartItem
-          key={item.id}
-          item={item}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-        />
+        <CartItem key={item.id} item={item} />
       ))}
       {cartItems.length !== 0 ? (
-        // <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
-        <h2 className="total">Total: $</h2>
+        <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
       ) : (
         ""
       )}
