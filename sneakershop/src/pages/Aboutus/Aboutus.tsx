@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import "./Aboutus.css";
 import aboutImg from "../../images/unc.jpg";
@@ -6,7 +6,12 @@ import aboutImg from "../../images/unc.jpg";
 const Aboutus = () => {
   return (
     <>
-    <img className="aboutImg" src={aboutImg} alt="jordan 11" /><Box>
+    <Grid container item xs={12}>
+    <img className="aboutImg" src={aboutImg} alt="jordan 11" />
+    <p className="first_title">"Trust is everything"</p>
+    <p className="second_title">ABOUT</p>
+    </Grid>
+    <Box>
       <br /> <br />
       <div className="container">
         <div className="container">

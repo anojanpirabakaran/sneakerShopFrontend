@@ -2,7 +2,7 @@
   z-index: 100;
 }
 
-.homeImg{
+.homeImg {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
@@ -13,14 +13,46 @@
   width: 100%;
   height: 70vh;
   object-fit: cover;
+  position: relative;
 }
 
-.paper_background{
+.paper_background {
   min-height: 500px;
   width: 170vh;
-  margin: auto
+  margin: auto;
 }
-.shop_title{
+.shop_title {
   text-align: center;
   margin-bottom: 5vh;
 }
+
+.first_title {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 7.5%;
+  text-align: center;
+  color: white;
+  font-size: 2.8em;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Signika Negative', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.second_title {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 12%;
+  text-align: center;
+  color: white;
+  font-size: 4em;
+  font-family: 'Inter', sans-serif;
+font-family: 'Varela Round', sans-serif;
+font-weight: bold;
+}
+
