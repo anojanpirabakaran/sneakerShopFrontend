@@ -15,6 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 import "./ItemCard.css";
 import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
+import { useNavigate } from "react-router-dom";
 //import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 
 export interface Sneaker {
@@ -31,6 +32,7 @@ export default function ItemCard() {
   const { addItem } = useContext(ShoppingCartContext);
 
   const [data, setData] = useState<Sneaker[]>([]);
+  const navigate = useNavigate();
 
   const getSneakerData = () => {
     ProductService.getAll()
@@ -43,6 +45,8 @@ export default function ItemCard() {
   useEffect(() => {
     getSneakerData();
   }, []);
+
+  const goToSneaker = (sneakerId: number) => navigate(`/shop/${sneakerId}`);
 
   return (
     <>
@@ -96,6 +100,7 @@ export default function ItemCard() {
                     color="primary"
                     variant="outlined"
                     className="cardButton"
+                    onClick={goToSneaker(sneaker.id)}
                   >
                     View options
                   </Button>

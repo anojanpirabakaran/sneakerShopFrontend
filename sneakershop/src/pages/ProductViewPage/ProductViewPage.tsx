@@ -1,8 +1,7 @@
 import React from 'react'
 
-export default function ShowVIewPage() {
+export default function ProductViewPage() {
   return (
-    <div>Macbook isch scheisse
-    </div>
-  )
+    <div></div>
+)
 }
