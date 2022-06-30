@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import { ShoppingCartContextProvider } from "../src/atoms/Context/ShoppingCartContext";
+import StickyFooter from "./atoms/StickyFooter/StickyFooter";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ShoppingCartContextProvider>
+      <StickyFooter />
     </Box>
   );
 }
