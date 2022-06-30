@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function ProductViewPage() {
+export default function ShowVIewPage() {
   return (
-    <div>ProductViewPage</div>
+    <div>ShowVIewPage</div>
   )
 }
