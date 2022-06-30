@@ -1,4 +1,4 @@
-import React, { createContext, FC, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 import * as items from "../../organisms/ItemCard/ItemCard";
 
 type ShoppingCartContextType = {

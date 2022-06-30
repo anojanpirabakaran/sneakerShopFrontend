@@ -16,11 +16,9 @@ import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import logo from "../../images/Logo.png";
+import ShoppingCartContext from "../Context/ShoppingCartContext";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
-import * as items from "../../organisms/ItemCard/ItemCard";
-import { useEffect, useState } from "react";
-import ShoppingCartContext from "../Context/ShoppingCartContext";
 
 const pages = ["Home", "Shop", "About-us"];
 const settings = ["Profile", "Register", "Login", "Logout"];
@@ -113,7 +111,7 @@ const MuiNavbar = () => {
                   sx={{
                     display: "block",
                     "&:hover": {
-                      color: "red",
+                      color: "blue",
                     },
                   }}
                 >
