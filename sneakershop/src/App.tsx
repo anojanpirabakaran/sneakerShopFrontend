@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import ProductViewPage from "./pages/ProductViewPage/ProductViewPage";
+import StickyFooter from "./atoms/StickyFooter/StickyFooter";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/profile" element={<Profile />}></Route>
         </Routes>
       </BrowserRouter>
+      <StickyFooter></StickyFooter>
     </Box>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function ShowVIewPage() {
   return (
-    <div>ShowVIewPage</div>
+    <div>Macbook isch scheisse
+    </div>
   )
 }
