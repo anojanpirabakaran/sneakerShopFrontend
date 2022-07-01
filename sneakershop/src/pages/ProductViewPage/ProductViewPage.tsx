@@ -5,7 +5,7 @@ import SingleItemCard from "../../organisms/SingleItemCard/SingleItemCard";
 export default function ProductViewPage() {
   return (
     <Box>
-      <SingleItemCard></SingleItemCard>
+      <SingleItemCard/>
     </Box>
   );
 }

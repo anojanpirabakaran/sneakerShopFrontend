@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardActionArea,
   CardActions,
@@ -45,11 +46,11 @@ export default function SingleItemCard() {
 
   return (
     <Grid container item md={12} className="singleItemCard">
-      <Grid key={sneaker.id} container item md={6}>
+      <Grid key={sneaker.id} container item md={12}>
         <Card key={sneaker.id}>
-          <CardActionArea>
+          
             <Grid container item md={12}>
-              <Grid item md={8}>
+              <Grid item md={6}>
                 <CardMedia
                   style={{
                     border: "3px solid #e3e3e3;",
@@ -59,35 +60,36 @@ export default function SingleItemCard() {
                   alt="image"
                 />
               </Grid>
-              <Grid item md={4}>
+              <Grid item md={6}>
                 <Typography
                   gutterBottom
                   variant="h5"
                   component="div"
-                  sx={{ fontWeight: "bold", textAlign: "left" }}
+                  className="sneaker_name"
                 >
                   {sneaker.brand + " " + sneaker.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {sneaker.price}$
+                <Typography variant="body2" className="sneaker_price">
+                  CHF {sneaker.price}
                 </Typography>
-                <Typography variant="body2" sx={{ textAlign: "left" }}>
+                <Typography variant="body2" color="text.secondary" sx={{ textAlign: "left" }} className="sneaker_description">
                   {sneaker.description}
                 </Typography>
 
-                <CardActions>
-                  <MuiButton
-                    className="addToCart"
-                    onClick={() => {
-                      addItem(sneaker);
-                    }}
+              
+                <Button
+                    size="small"
+                    color="primary"
+                    variant="outlined"
+                    className="cardButton"
+                    onClick={() => addItem(sneaker)}
                   >
-                    Add to Cart
-                  </MuiButton>
-                </CardActions>
+                    Add to cart
+                  </Button>
+                
               </Grid>
             </Grid>
-          </CardActionArea>
+          
         </Card>
       </Grid>
     </Grid>

@@ -58,6 +58,7 @@ const MuiNavbar = () => {
             noWrap
             component="a"
             href="/home"
+            className="header_title"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },

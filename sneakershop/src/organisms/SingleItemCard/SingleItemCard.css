@@ -15,12 +15,46 @@
   margin: auto;
 }
 .singleItemCard {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
 .addToCart {
   background-color: #628395 !important;
+}
+
+.sneaker_name{
+font-weight: bold !important;
+text-align: left !important;
+font-size: 4em !important;
+margin-bottom: 0em !important;
+font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    margin-top: 1em !important;
+}
+
+.sneaker_price{
+  font-size: 1.5em !important;
+  margin-bottom: 2em !important;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    margin-top: 1em !important;
+}
+
+.sneaker_description{
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    margin-top: 1em !important;
+    font-size: 1em !important;
+    margin-bottom: 4em !important;
+}
+
+.cardButton{
+  margin-left: auto !important;
+  margin-right: 10% !important;
+  border-color: black !important;
+  color: rgb(0, 0, 0) !important;
 }
