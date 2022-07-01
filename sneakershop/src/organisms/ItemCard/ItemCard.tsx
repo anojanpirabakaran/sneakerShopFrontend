@@ -1,3 +1,4 @@
+import AddIcon from "@mui/icons-material/Add";
 import {
   Button,
   Card,
@@ -7,15 +8,15 @@ import {
   Grid,
   IconButton,
   Tooltip,
-  Typography,
+  Typography
 } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
-import AddIcon from "@mui/icons-material/Add";
 
-import "./ItemCard.css";
-import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
 import { useNavigate } from "react-router-dom";
+import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
+import SneakerCardContext from "../../atoms/Context/SneakerCardContext";
+import "./ItemCard.css";
 //import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 
 export interface Sneaker {
@@ -30,6 +31,7 @@ export interface Sneaker {
 
 export default function ItemCard() {
   const { addItem } = useContext(ShoppingCartContext);
+  const { setCurrentSneaker } = useContext(SneakerCardContext);
 
   const [data, setData] = useState<Sneaker[]>([]);
   const navigate = useNavigate();
@@ -46,7 +48,10 @@ export default function ItemCard() {
     getSneakerData();
   }, []);
 
-  const goToSneaker = (sneakerId: number) => navigate(`/shop/${sneakerId}`);
+  const goToSneaker = (sneaker: Sneaker) => {
+    navigate("/shop/" + sneaker.id);
+    setCurrentSneaker(sneaker);
+  };
 
   return (
     <>
@@ -100,13 +105,13 @@ export default function ItemCard() {
                     color="primary"
                     variant="outlined"
                     className="cardButton"
-                    // onClick={goToSneaker(sneaker.id)}
+                    onClick={() => goToSneaker(sneaker)}
                   >
                     View options
                   </Button>
                   <IconButton
-                     onClick={() => {
-                     addItem(sneaker);
+                    onClick={() => {
+                      addItem(sneaker);
                     }}
                   >
                     <Tooltip title="Add to Cart">

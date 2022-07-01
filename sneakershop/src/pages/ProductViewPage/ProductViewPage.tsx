@@ -1,7 +1,11 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import React from "react";
+import SingleItemCard from "../../organisms/SingleItemCard/SingleItemCard";
 
 export default function ProductViewPage() {
   return (
-    <div></div>
-)
+    <Box>
+      <SingleItemCard></SingleItemCard>
+    </Box>
+  );
 }
