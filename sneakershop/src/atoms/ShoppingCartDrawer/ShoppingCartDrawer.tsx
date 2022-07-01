@@ -64,11 +64,6 @@ export default function ShoppingCartDrawer() {
           <MuiButton
             onClick={toggleDrawer(anchor, true)}
             sx={{
-              // #8D86C9
-              // #7293A0
-              // #BB8588
-              // #7699D4
-              // #628395
               backgroundColor: "#628395",
               "&:hover": {
                 backgroundColor: "inherit",
