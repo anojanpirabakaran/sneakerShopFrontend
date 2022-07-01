@@ -20,7 +20,7 @@ import ShoppingCartContext from "../Context/ShoppingCartContext";
 import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
 
-const pages = ["Home", "Shop", "About-us"];
+const pages = ["Home", "Shop", "About"];
 const settings = ["Profile", "Register", "Login", "Logout"];
 
 const MuiNavbar = () => {
@@ -101,7 +101,7 @@ const MuiNavbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none"},
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
@@ -122,11 +122,7 @@ const MuiNavbar = () => {
                   ) : (
                     ""
                   )}
-                  {page === "About-us" ? (
-                    <ContactsIcon className="icons" />
-                  ) : (
-                    ""
-                  )}
+                  {page === "About" ? <ContactsIcon className="icons" /> : ""}
                   {page}
                 </Button>
               ))}
@@ -160,6 +156,7 @@ const MuiNavbar = () => {
                 href={("/" + page).toLowerCase()}
                 key={page}
                 onClick={handleCloseNavMenu}
+                className="pages"
                 sx={{
                   my: 2,
                   color: "white",
