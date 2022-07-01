@@ -23,6 +23,7 @@ const CartItem = ({ item }: Props) => {
               disableElevation
               variant="contained"
               onClick={() => deleteItem(item)}
+              className="deleteButton"
             >
               -
             </Button>
@@ -32,6 +33,7 @@ const CartItem = ({ item }: Props) => {
               disableElevation
               variant="contained"
               onClick={() => addItem(item)}
+              className="addButton"
             >
               +
             </Button>

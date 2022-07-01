@@ -26,6 +26,16 @@
   text-align: center;
 }
 
-.itemAmount{
-    color: black;
+.itemAmount {
+  color: black;
+}
+
+.deleteButton {
+  background-color: #628395 !important;
+  color: #2b2d42 !important;
+}
+
+.addButton {
+  background-color: #628395 !important;
+  color: #2b2d42 !important;
 }

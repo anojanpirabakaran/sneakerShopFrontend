@@ -100,7 +100,7 @@ const MuiNavbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: { xs: "block", md: "none"},
               }}
             >
               {pages.map((page) => (
@@ -111,7 +111,7 @@ const MuiNavbar = () => {
                   sx={{
                     display: "block",
                     "&:hover": {
-                      color: "blue",
+                      color: "white",
                     },
                   }}
                 >
@@ -175,14 +175,20 @@ const MuiNavbar = () => {
 
           <Box className="shoppingCart">
             {/* Amount of Items which are in the shopping cart */}
-            <Badge badgeContent={cartItems.length} color="error">
+            <Badge badgeContent={cartItems.length} color="error" max={99}>
               <ShoppingCartDrawer />
             </Badge>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/2.jpg"
+                  sx={{
+                    backgroundColor: "#628395",
+                  }}
+                />
               </IconButton>
             </Tooltip>
             <Menu
