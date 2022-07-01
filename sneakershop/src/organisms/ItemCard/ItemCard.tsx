@@ -100,13 +100,13 @@ export default function ItemCard() {
                     color="primary"
                     variant="outlined"
                     className="cardButton"
-                    onClick={goToSneaker(sneaker.id)}
+                    // onClick={goToSneaker(sneaker.id)}
                   >
                     View options
                   </Button>
                   <IconButton
-                    onClick={() => {
-                      addItem(sneaker);
+                     onClick={() => {
+                     addItem(sneaker);
                     }}
                   >
                     <Tooltip title="Add to Cart">

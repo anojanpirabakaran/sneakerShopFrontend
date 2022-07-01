@@ -2,4 +2,9 @@
     min-height: 500px;
     width: 100vh;
     margin: auto;
+    margin-bottom: 2em;
+}
+
+.first_textfield{
+    margin-top: 4em;
 }
