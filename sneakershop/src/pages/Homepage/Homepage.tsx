@@ -4,6 +4,7 @@ import image from "../../images/jordan5.jpg";
 import ItemCard from "../../organisms/ItemCard/ItemCard";
 import { Grid, Paper } from "@mui/material";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PopularItemCard from "../../organisms/PopularItemCard/PopularItemCard";
 
 export default function Homepage() {
   return (
@@ -16,7 +17,7 @@ export default function Homepage() {
       <Grid container item xs={12}>
         <Paper elevation={0} className="paper_background">
           <h1 className="shop_title">Popular</h1>
-          <ItemCard />
+          <PopularItemCard/>
         </Paper>
       </Grid>
     </>
