@@ -1,8 +1,10 @@
 import {
-    Card,
-    CardActionArea,
-    CardActions, CardMedia,
-    Grid, Typography
+  Card,
+  CardActionArea,
+  CardActions,
+  CardMedia,
+  Grid,
+  Typography,
 } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
@@ -72,17 +74,17 @@ export default function SingleItemCard() {
                 <Typography variant="body2" sx={{ textAlign: "left" }}>
                   {sneaker.description}
                 </Typography>
-                <Grid className="addTocart" item md={12}>
-                  <CardActions>
-                    <MuiButton
-                      onClick={() => {
-                        addItem(sneaker);
-                      }}
-                    >
-                      Add to Cart
-                    </MuiButton>
-                  </CardActions>
-                </Grid>
+
+                <CardActions>
+                  <MuiButton
+                    className="addToCart"
+                    onClick={() => {
+                      addItem(sneaker);
+                    }}
+                  >
+                    Add to Cart
+                  </MuiButton>
+                </CardActions>
               </Grid>
             </Grid>
           </CardActionArea>
