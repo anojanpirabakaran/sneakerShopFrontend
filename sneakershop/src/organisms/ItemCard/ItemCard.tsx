@@ -16,8 +16,8 @@ import ProductService from "../../services/ProductService";
 import { useNavigate } from "react-router-dom";
 import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
 import SneakerCardContext from "../../atoms/Context/SneakerCardContext";
+import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 import "./ItemCard.css";
-//import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 
 export interface Sneaker {
   id: string;
@@ -55,6 +55,11 @@ export default function ItemCard() {
 
   return (
     <>
+      <SearchBar
+        setFilteredRows={setData}
+        rows={data}
+        filterAfter={["brand", "price", "name"]}
+      ></SearchBar>
       <Grid container item xs={12}>
         {data &&
           data.map((sneaker) => (

@@ -1,6 +1,9 @@
-import { Box, InputAdornment, TextField } from "@mui/material";
-import React, { useEffect, useState } from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Box, InputAdornment, TextField } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Sneaker } from "../../organisms/ItemCard/ItemCard";
+import ProductService from "../../services/ProductService";
+import "./SearchBar.css";
 
 export type SearchBarForTableProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,10 +25,23 @@ export const SearchBar = ({
   rows,
   filterAfter,
 }: SearchBarForTableProps) => {
-  const originalRows = rows.map((row) => row);
+  const [data, setData] = useState<Sneaker[]>([]);
+  const getSneakerData = () => {
+    ProductService.getAll()
+      .then((res: { data: React.SetStateAction<Sneaker[]> }) => {
+        setData(res.data);
+      })
+      .catch((err: any) => {});
+  };
+
+  useEffect(() => {
+    getSneakerData();
+  }, []);
+
+  let originalRows = rows.map((row) => row);
 
   const requestSearch = (searchedVal: string) => {
-    let filteredRows = originalRows.filter((row) => {
+    const filteredRows = originalRows.filter((row) => {
       return filterAfter.some((rowProperty: string) =>
         (row[rowProperty] + "")
           .toLowerCase()
@@ -35,10 +51,19 @@ export const SearchBar = ({
     setFilteredRows(filteredRows);
   };
 
+  const cancelSearch = () => {
+    originalRows = data;
+    requestSearch("");
+  };
+
   return (
     <Box sx={{ width: "100%" }}>
       <TextField
-        onChange={(event) => requestSearch(event.target.value)}
+        onChange={(event) =>
+          event.target.value.length
+            ? requestSearch(event.target.value)
+            : cancelSearch()
+        }
         placeholder={"Search"}
         className={"searchBar"}
         variant={"filled"}
