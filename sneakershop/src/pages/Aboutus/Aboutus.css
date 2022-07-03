@@ -141,7 +141,7 @@ body {
   background-color: #ffffff;
 }
 
-.aboutImg{
+.aboutImg {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
@@ -164,9 +164,9 @@ body {
   text-align: center;
   color: white;
   font-size: 2.8em;
-  font-family: 'Inter', sans-serif;
-  font-family: 'Signika Negative', sans-serif;
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Signika Negative", sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 .second_title {
@@ -179,7 +179,7 @@ body {
   text-align: center;
   color: white;
   font-size: 4em;
-  font-family: 'Inter', sans-serif;
-font-family: 'Varela Round', sans-serif;
-font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
 }
