@@ -21,7 +21,7 @@ import ShoppingCartDrawer from "../ShoppingCartDrawer/ShoppingCartDrawer";
 import "./MuiNavbar.css";
 
 const pages = ["Home", "Shop", "About"];
-const settings = ["Profile", "Register", "Login", "Logout"];
+// const settings = ["Profile", "Register", "Login", "Logout"];
 
 const MuiNavbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -172,13 +172,12 @@ const MuiNavbar = () => {
           </Box>
 
           <Box className="shoppingCart">
-            {/* Amount of Items which are in the shopping cart */}
             <Badge badgeContent={cartItems.length} color="error" max={99}>
               <ShoppingCartDrawer />
             </Badge>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   alt="Remy Sharp"
@@ -212,7 +211,7 @@ const MuiNavbar = () => {
                   </Button>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

@@ -20,6 +20,41 @@ export default function FormDialog() {
     setOpen(false);
   };
 
+  function arrayToCsv(data: any[]) {
+    return data
+      .map((row) =>
+        row
+          .map(String)
+          .map((v: string) => v.replaceAll('"', '""'))
+          .map((v: any) => `"${v}"`)
+          .join(",")
+      )
+      .join("\r\n");
+  }
+
+  let csv = arrayToCsv([
+    [
+      cartItems.map((item) => item.brand),
+      cartItems.map((item) => item.name),
+      cartItems.map((item) => item.image),
+      cartItems.map((item) => item.price) + "$",
+    ],
+  ]);
+
+  function downloadBlob(content: BlobPart, filename: string, contentType: any) {
+    let blob = new Blob([content], { type: contentType });
+    let url = URL.createObjectURL(blob);
+
+    let pom = document.createElement("a");
+    pom.href = url;
+    pom.setAttribute("download", filename);
+    pom.click();
+  }
+
+  const download = () => {
+    return downloadBlob(csv, "export.csv", "text/csv;charset=utf-8;");
+  };
+
   return (
     <div>
       <Button color="inherit" onClick={handleClickOpen}>
@@ -36,7 +71,7 @@ export default function FormDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Download</Button>
+          <Button onClick={download}>Download</Button>
         </DialogActions>
       </Dialog>
     </div>
