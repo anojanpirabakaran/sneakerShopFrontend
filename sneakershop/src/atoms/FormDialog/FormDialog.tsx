@@ -1,16 +1,16 @@
-import * as React from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import * as React from "react";
+import ShoppingCartContext from "../Context/ShoppingCartContext";
 import "./FormDialog.css";
-import { Input } from "@mui/material";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
+  const { cartItems } = React.useContext(ShoppingCartContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -33,19 +33,10 @@ export default function FormDialog() {
             then receive your invoice by email. Once they have paid, their
             products will be sent to them.
           </DialogContentText>
-          <TextField
-            margin="dense"
-            id="name"
-            label="email"
-            type="email"
-            fullWidth
-            variant="standard"
-            className="email"
-          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>Download</Button>
         </DialogActions>
       </Dialog>
     </div>
