@@ -3,11 +3,12 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import * as React from "react";
 import { useContext } from "react";
-import MuiButton from "../MuiButton/MuiButton";
 import * as items from "../../organisms/ItemCard/ItemCard";
 import CartItem from "../CartItem/CartItem";
-import "./ShoppingCartDrawer.css";
 import ShoppingCartContext from "../Context/ShoppingCartContext";
+import FullScreenDialogCheckout from "../FullScreenDialogCheckout/FullScreenDialogCheckout";
+import MuiButton from "../MuiButton/MuiButton";
+import "./ShoppingCartDrawer.css";
 
 type Anchor = "right";
 
@@ -39,7 +40,6 @@ export default function ShoppingCartDrawer() {
     <Box
       sx={{ width: 400 }}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <h2 className="title">Your Cart</h2>
@@ -49,8 +49,14 @@ export default function ShoppingCartDrawer() {
       {cartItems.map((item) => (
         <CartItem key={item.id} item={item} />
       ))}
+
       {cartItems.length !== 0 ? (
-        <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
+        <Box>
+          <h2 className="total">Total: ${calculateTotal(cartItems)}</h2>
+          <Box className="checkout">
+            <FullScreenDialogCheckout></FullScreenDialogCheckout>
+          </Box>
+        </Box>
       ) : (
         ""
       )}

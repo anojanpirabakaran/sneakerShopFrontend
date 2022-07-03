@@ -1,18 +1,14 @@
 import {
   Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardMedia,
+  Card, CardMedia,
   Grid,
-  Typography,
+  Typography
 } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
 
 import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
 import SneakerCardContext from "../../atoms/Context/SneakerCardContext";
-import MuiButton from "../../atoms/MuiButton/MuiButton";
 import "./SingleItemCard.css";
 
 export interface Sneaker {
