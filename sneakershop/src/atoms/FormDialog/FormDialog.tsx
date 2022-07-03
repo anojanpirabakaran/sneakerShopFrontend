@@ -34,10 +34,10 @@ export default function FormDialog() {
 
   let csv = arrayToCsv([
     [
-      cartItems.map((item) => item.brand),
-      cartItems.map((item) => item.name),
-      cartItems.map((item) => item.image),
-      cartItems.map((item) => item.price) + "$",
+      cartItems.map((item) => item.brand) + "\n",
+      cartItems.map((item) => item.name) + "\n",
+      cartItems.map((item) => item.description) + "\n",
+      cartItems.map((item) => item.price) + "$\n" ,
     ],
   ]);
 
@@ -52,7 +52,7 @@ export default function FormDialog() {
   }
 
   const download = () => {
-    return downloadBlob(csv, "export.csv", "text/csv;charset=utf-8;");
+    return downloadBlob(csv, "Products.csv", "text/csv;charset=utf-8;");
   };
 
   return (
