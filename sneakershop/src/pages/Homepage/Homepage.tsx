@@ -12,7 +12,7 @@ export default function Homepage() {
     <Grid container item xs={12}>
       <img className="homeImg" src={image} alt="jordan 11" />
       <p className="first_title">Welcome to House of Kickz</p>
-      <p className="second_title">IT'S NICE TO MEET</p>
+      <p className="second_title">IT'S NICE TO MEET YOU</p>
   </Grid>
       <Grid container item xs={12}>
         <Paper elevation={0} className="paper_background">

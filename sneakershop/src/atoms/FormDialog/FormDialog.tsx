@@ -37,7 +37,7 @@ export default function FormDialog() {
       cartItems.map((item) => item.brand) + "\n",
       cartItems.map((item) => item.name) + "\n",
       cartItems.map((item) => item.description) + "\n",
-      cartItems.map((item) => item.price) + "$\n" ,
+      cartItems.map((item) => item.price) + "$\n",
     ],
   ]);
 
@@ -71,7 +71,9 @@ export default function FormDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={download}>Download</Button>
+          <Button onClick={download} href="http://localhost:3000/shop">
+            Download
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

@@ -4,10 +4,18 @@ import * as items from "../../organisms/ItemCard/ItemCard";
 import ShoppingCartContext from "../Context/ShoppingCartContext";
 import "./CartItem.css";
 
+/**
+ * Prop type for sneaker
+ */
 type Props = {
   item: items.Sneaker;
 };
 
+/**
+ * Cart item which is in the shopping Cart
+ * @param item which is in cart
+ * @returns one cart item each
+ */
 const CartItem = ({ item }: Props) => {
   const { addItem, deleteItem } = useContext(ShoppingCartContext);
 
@@ -27,7 +35,6 @@ const CartItem = ({ item }: Props) => {
             >
               -
             </Button>
-            {/* <p className="itemAmount">{item.amount}</p> */}
             <Button
               size="small"
               disableElevation
