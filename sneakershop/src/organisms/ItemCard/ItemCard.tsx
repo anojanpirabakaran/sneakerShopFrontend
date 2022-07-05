@@ -8,7 +8,7 @@ import {
   Grid,
   IconButton,
   Tooltip,
-  Typography
+  Typography,
 } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
@@ -19,6 +19,9 @@ import SneakerCardContext from "../../atoms/Context/SneakerCardContext";
 import { SearchBar } from "../../atoms/SearchBar/SearchBar";
 import "./ItemCard.css";
 
+/**
+ * interface for Sneaker
+ */
 export interface Sneaker {
   id: string;
   name: string;
@@ -29,6 +32,9 @@ export interface Sneaker {
   amount: number;
 }
 
+/**
+ * item Card where the Product is shown
+ */
 export default function ItemCard() {
   const { addItem } = useContext(ShoppingCartContext);
   const { setCurrentSneaker } = useContext(SneakerCardContext);

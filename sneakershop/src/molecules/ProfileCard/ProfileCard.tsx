@@ -16,10 +16,16 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import MuiTextField from "../../atoms/MuiTextField/MuiTextfield";
 
+/**
+ * Profile page props to expand
+ */
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
 
+/**
+ * expand profile page
+ */
 const ExpandMore = styled((props: ExpandMoreProps) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -30,6 +36,11 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
+
+/**
+ * Profile Card where the users data is shown
+ * returns a Profile Card
+ */
 
 const ProfileCard = () => {
   const [expanded, setExpanded] = React.useState(false);

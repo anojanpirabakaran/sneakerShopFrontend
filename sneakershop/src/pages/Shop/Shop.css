@@ -61,25 +61,22 @@
   }
 }
 
-
 @media (max-width: 400px) {
   .second_title {
-   font-size: 40px !important;
-   margin-top: 20% !important;
+    font-size: 40px !important;
+    margin-top: 20% !important;
   }
 }
-
 
 @media (max-width: 320px) {
   .second_title {
-   font-size: 40px !important;
-   margin-top: 50% !important;
+    font-size: 40px !important;
+    margin-top: 50% !important;
   }
 }
 
-
 @media (max-width: 400px) {
   .first_title {
-   font-size: 40px !important;
+    font-size: 40px !important;
   }
 }

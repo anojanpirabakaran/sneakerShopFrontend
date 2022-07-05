@@ -1,21 +1,33 @@
 import React, { createContext, useState } from "react";
 import * as items from "../../organisms/ItemCard/ItemCard";
 
+/**
+ * Type for COntext
+ */
 type ShoppingCartContextType = {
   cartItems: items.Sneaker[];
   addItem: (sneaker: items.Sneaker) => void;
   deleteItem: (sneaker: items.Sneaker) => void;
 };
 
+/**
+ * Default Values for Context
+ */
 const defaultValues: ShoppingCartContextType = {
   cartItems: [],
   addItem: () => {},
   deleteItem: () => {},
 };
 
+/**
+ * Create Context with default values
+ */
 const ShoppingCartContext =
   createContext<ShoppingCartContextType>(defaultValues);
 
+/**
+ * ShoppingCartContextProvider access it to get all Functions
+ */
 export const ShoppingCartContextProvider = ({
   children,
 }: {

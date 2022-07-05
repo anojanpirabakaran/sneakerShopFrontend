@@ -25,7 +25,6 @@ const MuiTextField = ({ placeholder, label, type, onChange }: textfield) => {
         label={label}
         type={type}
         onChange={() => {}}
-        
       />
     </Box>
   );

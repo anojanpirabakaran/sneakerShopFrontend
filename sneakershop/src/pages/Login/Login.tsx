@@ -16,16 +16,25 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
+/**
+ * interface for login what is needed
+ */
 interface IFormInput {
   email: string;
   password: string;
 }
 
+/**
+ * yup form validation
+ */
 const schema = yup.object().shape({
   email: yup.string().required().email(),
   password: yup.string().required().min(8).max(120),
 });
 
+/**
+ * styles for login
+ */
 const useStyles = makeStyles((theme) => ({
   heading: {
     textAlign: "center",
@@ -36,6 +45,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Login function with all the logic and styling
+ * @returns a Login form
+ */
 function Login() {
   const navigation = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -63,9 +76,6 @@ function Login() {
       })
       .catch(() => navigation("/login"));
   };
-
-
-  
 
   return (
     <Container maxWidth="xs">

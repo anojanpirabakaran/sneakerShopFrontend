@@ -5,7 +5,10 @@ import { Sneaker } from "../../organisms/ItemCard/ItemCard";
 import ProductService from "../../services/ProductService";
 import "./SearchBar.css";
 
-export type SearchBarForTableProps = {
+/**
+ * Type for SearchBar
+ */
+export type SearchBarProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setFilteredRows: (filter: any[]) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,7 +27,7 @@ export const SearchBar = ({
   setFilteredRows,
   rows,
   filterAfter,
-}: SearchBarForTableProps) => {
+}: SearchBarProps) => {
   const [data, setData] = useState<Sneaker[]>([]);
   const getSneakerData = () => {
     ProductService.getAll()
@@ -40,6 +43,10 @@ export const SearchBar = ({
 
   let originalRows = rows.map((row) => row);
 
+  /**
+   * Request Search when at least 1 Character is typed in the searchbar
+   * @param searchedVal to Search after
+   */
   const requestSearch = (searchedVal: string) => {
     const filteredRows = originalRows.filter((row) => {
       return filterAfter.some((rowProperty: string) =>
@@ -51,6 +58,9 @@ export const SearchBar = ({
     setFilteredRows(filteredRows);
   };
 
+  /**
+   * Cancel search and reload all originalData
+   */
   const cancelSearch = () => {
     originalRows = data;
     requestSearch("");

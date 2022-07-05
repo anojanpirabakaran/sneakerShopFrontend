@@ -7,7 +7,6 @@ import CactusJack from "../../images/Cactus_Jack.png";
 import Jordan1 from "../../images/Jordan1.png";
 import Jordan11 from "../../images/Jordan11.png";
 
-
 /**
  * A Carousel wiht 3 images which will be shown 3 seconds and then the next Image is shown
  * @returns a whole Carousel

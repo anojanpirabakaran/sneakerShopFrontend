@@ -41,11 +41,7 @@ export default function FullScreenDialogCheckout() {
       <Button variant="outlined" onClick={handleClickOpen}>
         Checkout
       </Button>
-      <Dialog
-        fullScreen
-        open={open}
-        TransitionComponent={Transition}
-      >
+      <Dialog fullScreen open={open} TransitionComponent={Transition}>
         <AppBar sx={{ position: "relative" }}>
           <Toolbar>
             <IconButton
@@ -63,7 +59,6 @@ export default function FullScreenDialogCheckout() {
               Total: {cartItems.reduce((acc, item) => acc + item.price, 0)}$
             </Typography>
             <FormDialog></FormDialog>
-            
           </Toolbar>
         </AppBar>
         <Grid container item md={6} className="checkoutItem">

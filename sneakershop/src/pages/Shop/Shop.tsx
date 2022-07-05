@@ -5,6 +5,9 @@ import ItemCard from "../../organisms/ItemCard/ItemCard";
 import "./Shop.css";
 import shopImg from "../../images/Jordan11.png";
 
+/**
+ * Shop page whith all the Products
+ */
 export default function Shop() {
   return (
     <>
@@ -15,7 +18,6 @@ export default function Shop() {
       </Grid>
       <Grid container item sm={12}>
         <Paper elevation={0} className="paper_background">
-          {/* <h1 className="shop_title">All Products</h1> */}
           <ItemCard />
         </Paper>
       </Grid>

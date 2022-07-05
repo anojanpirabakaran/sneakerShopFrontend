@@ -14,6 +14,10 @@ import StickyFooter from "./atoms/StickyFooter/StickyFooter";
 import { ShoppingCartContextProvider } from "./atoms/Context/ShoppingCartContext";
 import { SneakerCardContextProvider } from "./atoms/Context/SneakerCardContext";
 
+/**
+ * The whole Application
+ * @returns whole Application
+ */
 function App() {
   return (
     <Box>

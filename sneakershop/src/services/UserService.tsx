@@ -1,5 +1,8 @@
 import axios from "axios";
 
+/**
+ * userService to get post a user
+ */
 const userService = (
   email: string,
   firstName: string,

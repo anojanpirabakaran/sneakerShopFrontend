@@ -12,12 +12,10 @@
   }
 }
 
-
 @media (max-width: 500px) {
-    .searchBar {
-      width: 70% !important;
-      margin-bottom: 2% !important;
-      margin-left: 15% !important;
-    }
+  .searchBar {
+    width: 70% !important;
+    margin-bottom: 2% !important;
+    margin-left: 15% !important;
   }
-  
+}
