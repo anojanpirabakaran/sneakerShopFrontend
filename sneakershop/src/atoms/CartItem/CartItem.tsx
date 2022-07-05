@@ -48,7 +48,6 @@ const CartItem = ({ item }: Props) => {
 
           <div className="information">
             <p>Price: ${item.price}</p>
-            <p>Total: ${item.price}</p>
           </div>
         </div>
       </div>
