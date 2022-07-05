@@ -34,10 +34,17 @@ export default function FormDialog() {
 
   let csv = arrayToCsv([
     [
-      cartItems.map((item) => item.brand) + "\n",
-      cartItems.map((item) => item.name) + "\n",
-      cartItems.map((item) => item.description) + "\n",
-      cartItems.map((item) => item.price) + "$\n",
+      cartItems.map(
+        (item) =>
+          item.brand +
+          " " +
+          item.name +
+          " " +
+          item.description +
+          " " +
+          item.price +
+          "\n"
+      ),
     ],
   ]);
 
