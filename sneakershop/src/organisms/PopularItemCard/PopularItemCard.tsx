@@ -15,6 +15,8 @@ import ProductService from "../../services/ProductService";
 
 import ShoppingCartContext from "../../atoms/Context/ShoppingCartContext";
 import "./PopularItemCard.css";
+import SneakerCardContext from "../../atoms/Context/SneakerCardContext";
+import { useNavigate } from "react-router-dom";
 
 /**
  * interface Sneaker
@@ -34,6 +36,9 @@ export interface Sneaker {
  */
 export default function ItemCard() {
   const { addItem } = useContext(ShoppingCartContext);
+  const { setCurrentSneaker } = useContext(SneakerCardContext);
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState<Sneaker[]>([]);
 
@@ -48,6 +53,11 @@ export default function ItemCard() {
   useEffect(() => {
     getSneakerData();
   }, []);
+
+  const goToSneaker = (sneaker: Sneaker) => {
+    navigate("/shop/" + sneaker.id);
+    setCurrentSneaker(sneaker);
+  };
 
   return (
     <>
@@ -101,6 +111,7 @@ export default function ItemCard() {
                     color="primary"
                     variant="outlined"
                     className="cardButton"
+                    onClick={() => goToSneaker(sneaker)}
                   >
                     View options
                   </Button>
